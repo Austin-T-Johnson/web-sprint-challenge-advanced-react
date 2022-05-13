@@ -242,7 +242,7 @@ export default class AppClass extends React.Component {
                 .then(res => {
                     this.setState({
                         ...this.state,
-                        message: [...this.state.message, res]
+                        message: res
                     })
                 }).catch(err => { console.error(err) })
         } else {
@@ -274,7 +274,7 @@ export default class AppClass extends React.Component {
         return (
             <div id="wrapper" className={className}>
                 <div className="info">
-                    <h3 id="coordinates">{`Coordinates ${this.state.x},${this.state.y}`}</h3>
+                    <h3 id="coordinates">{`Coordinates (${this.state.x}, ${this.state.y})`}</h3>
                     <h3 id="steps">{`You moved ${this.state.steps} times`}</h3>
                 </div>
                 <div id="grid">
