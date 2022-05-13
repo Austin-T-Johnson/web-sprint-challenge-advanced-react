@@ -278,15 +278,15 @@ export default class AppClass extends React.Component {
                     <h3 id="steps">{`You moved ${this.state.steps} times`}</h3>
                 </div>
                 <div id="grid">
-                    <div className={`square ${this.state.activeSquare === 0 ? 'active' : ''}`}>{this.state.activeSquare === 0 ? '🐝' : ''}</div>
-                    <div className={`square ${this.state.activeSquare === 1 ? 'active' : ''}`}>{this.state.activeSquare === 1 ? '🐝' : ''}</div>
-                    <div className={`square ${this.state.activeSquare === 2 ? 'active' : ''}`}>{this.state.activeSquare === 2 ? '🐝' : ''}</div>
-                    <div className={`square ${this.state.activeSquare === 3 ? 'active' : ''}`}>{this.state.activeSquare === 3 ? '🐝' : ''}</div>
-                    <div className={`square ${this.state.activeSquare === 4 ? 'active' : ''}`}>{this.state.activeSquare === 4 ? '🐝' : ''}</div>
-                    <div className={`square ${this.state.activeSquare === 5 ? 'active' : ''}`}>{this.state.activeSquare === 5 ? '🐝' : ''}</div>
-                    <div className={`square ${this.state.activeSquare === 6 ? 'active' : ''}`}>{this.state.activeSquare === 6 ? '🐝' : ''}</div>
-                    <div className={`square ${this.state.activeSquare === 7 ? 'active' : ''}`}>{this.state.activeSquare === 7 ? '🐝' : ''}</div>
-                    <div className={`square ${this.state.activeSquare === 8 ? 'active' : ''}`}>{this.state.activeSquare === 8 ? '🐝' : ''}</div>
+                    <div className={`square ${this.state.activeSquare === 0 ? 'active' : ''}`}>{this.state.activeSquare === 0 ? 'B' : ''}</div>
+                    <div className={`square ${this.state.activeSquare === 1 ? 'active' : ''}`}>{this.state.activeSquare === 1 ? 'B' : ''}</div>
+                    <div className={`square ${this.state.activeSquare === 2 ? 'active' : ''}`}>{this.state.activeSquare === 2 ? 'B' : ''}</div>
+                    <div className={`square ${this.state.activeSquare === 3 ? 'active' : ''}`}>{this.state.activeSquare === 3 ? 'B' : ''}</div>
+                    <div className={`square ${this.state.activeSquare === 4 ? 'active' : ''}`}>{this.state.activeSquare === 4 ? 'B' : ''}</div>
+                    <div className={`square ${this.state.activeSquare === 5 ? 'active' : ''}`}>{this.state.activeSquare === 5 ? 'B' : ''}</div>
+                    <div className={`square ${this.state.activeSquare === 6 ? 'active' : ''}`}>{this.state.activeSquare === 6 ? 'B' : ''}</div>
+                    <div className={`square ${this.state.activeSquare === 7 ? 'active' : ''}`}>{this.state.activeSquare === 7 ? 'B' : ''}</div>
+                    <div className={`square ${this.state.activeSquare === 8 ? 'active' : ''}`}>{this.state.activeSquare === 8 ? 'B' : ''}</div>
                 </div>
                 <div className="info">
                     <h3 id="message">{this.state.message}</h3>
