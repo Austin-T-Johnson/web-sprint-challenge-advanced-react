@@ -95,8 +95,8 @@ export default class AppClass extends React.Component {
                 ... this.state,
                 activeSquare: this.state.activeSquare += 3,
                 steps: this.state.steps + 1,
-                x: this.state.x + 1,
-                y: this.state.y
+                x: this.state.x,
+                y: this.state.y + 1
             })
         } else if (this.state.activeSquare === 1) {
             this.setState({
