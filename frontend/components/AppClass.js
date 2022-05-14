@@ -167,7 +167,7 @@ export default class AppClass extends React.Component {
                 activeSquare: this.state.activeSquare -= 1,
                 steps: this.state.steps + 1,
                 x: this.state.x - 1,
-                y: this.state.y 
+                y: this.state.y
             })
         } else if (this.state.activeSquare === 6 || this.state.activeSquare === 0 || this.state.activeSquare === 3) {
             this.setState({
@@ -223,7 +223,7 @@ export default class AppClass extends React.Component {
                 activeSquare: this.state.activeSquare += 1,
                 steps: this.state.steps + 1,
                 x: this.state.x + 1,
-                y: this.state.y 
+                y: this.state.y
             })
         } else if (this.state.activeSquare === 2 || this.state.activeSquare === 5 || this.state.activeSquare === 8) {
             this.setState({
@@ -234,22 +234,29 @@ export default class AppClass extends React.Component {
 
 
 
-    handleSubmit = e => {
+    handleSubmit = (e) => {
         e.preventDefault();
-        // const objState = { ...this.state }
         if (this.state.email === "lady@gaga.com") {
-            axios.post('http://localhost:9000/api/result')
+            axios.post('http://localhost:9000/api/result', {
+                steps: this.state.steps,
+                x: this.state.x,
+                y: this.state.y,
+                email: this.state.email
+            })
                 .then(res => {
+                    console.log(res)
                     this.setState({
                         ...this.state,
-                        message: res
+                        message: res.data.message
                     })
-                }).catch(err => { console.error(err) })
+
+                }).catch(err => {
+                    console.error(err)
+                })
         } else {
             return (
                 this.setState({
                     message: 'Ouch: email must be a valid email',
-
                 })
             )
         }
@@ -262,6 +269,7 @@ export default class AppClass extends React.Component {
             x: 2,
             y: 2,
             message: "",
+            email: ""
         })
     }
 
@@ -275,7 +283,7 @@ export default class AppClass extends React.Component {
             <div id="wrapper" className={className}>
                 <div className="info">
                     <h3 id="coordinates">{`Coordinates (${this.state.x}, ${this.state.y})`}</h3>
-                    <h3 id="steps">{`You moved ${this.state.steps} times`}</h3>
+                    <h3 id="steps">{this.state.steps <= 0 || this.state.steps > 1 ? `You moved ${this.state.steps} times` : `You moved ${this.state.steps} time`}</h3>
                 </div>
                 <div id="grid">
                     <div className={`square ${this.state.activeSquare === 0 ? 'active' : ''}`}>{this.state.activeSquare === 0 ? 'B' : ''}</div>
