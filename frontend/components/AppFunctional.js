@@ -64,6 +64,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 0 || state.activeSquare === 1 || state.activeSquare === 2) {
             setState({
+                ... state,
                 message: "You can't go up"
             })
         }
@@ -119,6 +120,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 6 || state.activeSquare === 7 || state.activeSquare === 8) {
             setState({
+                ... state,
                 message: "You can't go down"
             })
         }
@@ -174,6 +176,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 6 || state.activeSquare === 0 || state.activeSquare === 3) {
             setState({
+                ... state,
                 message: "You can't go left"
             })
         }
@@ -230,6 +233,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 2 || state.activeSquare === 5 || state.activeSquare === 8) {
             setState({
+                ... state,
                 message: "You can't go right"
             })
         }
