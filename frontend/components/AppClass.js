@@ -269,7 +269,7 @@ export default class AppClass extends React.Component {
             x: 2,
             y: 2,
             message: "",
-            email: ""
+            email: "lady@gaga.com"
         })
     }
 
