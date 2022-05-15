@@ -2,21 +2,21 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 export default function AppFunctional(props) {
-    
-   const [state,setState] = useState({
-    activeSquare: 4,
-    steps: 0,
-    x: 2,
-    y: 2,
-    message: "",
-    email: "lady@gaga.com"
-   })
 
-    
+    const [state, setState] = useState({
+        activeSquare: 4,
+        steps: 0,
+        x: 2,
+        y: 2,
+        message: "",
+        email: ""
+    })
+
+
     const moveUp = () => {
         if (state.activeSquare === 4) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare -= 3,
                 steps: state.steps + 1,
                 x: state.x,
@@ -24,7 +24,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 3) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare -= 3,
                 steps: state.steps + 1,
                 x: state.x,
@@ -32,7 +32,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 5) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare -= 3,
                 steps: state.steps + 1,
                 x: state.x,
@@ -40,7 +40,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 6) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare -= 3,
                 steps: state.steps + 1,
                 x: state.x,
@@ -48,7 +48,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 7) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare -= 3,
                 steps: state.steps + 1,
                 x: state.x,
@@ -56,7 +56,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 8) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare -= 3,
                 steps: state.steps + 1,
                 x: state.x,
@@ -64,7 +64,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 0 || state.activeSquare === 1 || state.activeSquare === 2) {
             setState({
-                ... state,
+                ...state,
                 message: "You can't go up"
             })
         }
@@ -72,7 +72,7 @@ export default function AppFunctional(props) {
     const moveDown = () => {
         if (state.activeSquare === 4) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare += 3,
                 steps: state.steps + 1,
                 x: state.x,
@@ -80,7 +80,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 3) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare += 3,
                 steps: state.steps + 1,
                 x: state.x,
@@ -88,7 +88,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 5) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare += 3,
                 steps: state.steps + 1,
                 x: state.x,
@@ -96,7 +96,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 0) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare += 3,
                 steps: state.steps + 1,
                 x: state.x,
@@ -104,7 +104,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 1) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare += 3,
                 steps: state.steps + 1,
                 x: state.x,
@@ -112,7 +112,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 2) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare += 3,
                 steps: state.steps + 1,
                 x: state.x,
@@ -120,7 +120,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 6 || state.activeSquare === 7 || state.activeSquare === 8) {
             setState({
-                ... state,
+                ...state,
                 message: "You can't go down"
             })
         }
@@ -128,7 +128,7 @@ export default function AppFunctional(props) {
     const moveLeft = () => {
         if (state.activeSquare === 4) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare -= 1,
                 steps: state.steps + 1,
                 x: state.x - 1,
@@ -136,7 +136,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 5) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare -= 1,
                 steps: state.steps + 1,
                 x: state.x - 1,
@@ -144,7 +144,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 1) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare -= 1,
                 steps: state.steps + 1,
                 x: state.x - 1,
@@ -152,7 +152,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 2) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare -= 1,
                 steps: state.steps + 1,
                 x: state.x - 1,
@@ -160,7 +160,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 7) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare -= 1,
                 steps: state.steps + 1,
                 x: state.x - 1,
@@ -168,7 +168,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 8) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare -= 1,
                 steps: state.steps + 1,
                 x: state.x - 1,
@@ -176,7 +176,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 6 || state.activeSquare === 0 || state.activeSquare === 3) {
             setState({
-                ... state,
+                ...state,
                 message: "You can't go left"
             })
         }
@@ -185,7 +185,7 @@ export default function AppFunctional(props) {
     const moveRight = () => {
         if (state.activeSquare === 4) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare += 1,
                 steps: state.steps + 1,
                 x: state.x + 1,
@@ -193,7 +193,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 0) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare += 1,
                 steps: state.steps + 1,
                 x: state.x + 1,
@@ -201,7 +201,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 1) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare += 1,
                 steps: state.steps + 1,
                 x: state.x + 1,
@@ -209,7 +209,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 3) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare += 1,
                 steps: state.steps + 1,
                 x: state.x + 1,
@@ -217,7 +217,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 7) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare += 1,
                 steps: state.steps + 1,
                 x: state.x + 1,
@@ -225,7 +225,7 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 6) {
             setState({
-                ... state,
+                ...state,
                 activeSquare: state.activeSquare += 1,
                 steps: state.steps + 1,
                 x: state.x + 1,
@@ -233,13 +233,18 @@ export default function AppFunctional(props) {
             })
         } else if (state.activeSquare === 2 || state.activeSquare === 5 || state.activeSquare === 8) {
             setState({
-                ... state,
+                ...state,
                 message: "You can't go right"
             })
         }
     }
 
-
+    const handleChanges = e => {
+        setState({
+            ...state,
+            email: e.target.value
+        })
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -248,22 +253,40 @@ export default function AppFunctional(props) {
                 steps: state.steps,
                 x: state.x,
                 y: state.y,
-                email: state.email
+                email: state.email,
             })
                 .then(res => {
-                    console.log(res)
                     setState({
                         ...state,
-                        message: res.data.message
+                        message: res.data.message,
+                        email: ""
                     })
 
                 }).catch(err => {
                     console.error(err)
                 })
+        } else if (state.email === "") {
+            return (
+                setState({
+                    ...state,
+                    message: 'Ouch: email is required',
+                    email: ""
+                })
+            )
+        } else if (state.email === "foo@bar.baz") {
+            return (
+                setState({
+                    ...state,
+                    message: 'foo@bar.baz failure #71',
+                    email: ""
+                })
+            )
         } else {
             return (
                 setState({
+                    ...state,
                     message: 'Ouch: email must be a valid email',
+                    email: ""
                 })
             )
         }
@@ -276,10 +299,10 @@ export default function AppFunctional(props) {
             x: 2,
             y: 2,
             message: "",
-            email: "lady@gaga.com"
+            email: ""
         })
     }
-   
+
     return (
         <div id="wrapper" className={props.className}>
             <div className="info">
@@ -308,7 +331,13 @@ export default function AppFunctional(props) {
                 <button onClick={reset} id="reset">reset</button>
             </div>
             <form onSubmit={handleSubmit}>
-                <input id="email" type="email" placeholder="type email"></input>
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="type email"
+                    value={state.email}
+                    onChange={handleChanges}>
+                </input>
                 <input id="submit" type="submit"></input>
             </form>
         </div>

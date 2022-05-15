@@ -8,7 +8,7 @@ export default class AppClass extends React.Component {
         x: 2,
         y: 2,
         message: "",
-        email: "lady@gaga.com"
+        email: ""
     }
     moveUp = () => {
         if (this.state.activeSquare === 4) {
@@ -232,6 +232,11 @@ export default class AppClass extends React.Component {
         }
     }
 
+    handleChanges = e => {
+        this.setState({
+            email: e.target.value
+        })
+    }
 
 
     handleSubmit = (e) => {
@@ -247,16 +252,34 @@ export default class AppClass extends React.Component {
                     console.log(res)
                     this.setState({
                         ...this.state,
-                        message: res.data.message
+                        message: res.data.message,
+                        email: ""
                     })
 
                 }).catch(err => {
                     console.error(err)
                 })
+        } else if (this.state.email === "") {
+            return (
+                this.setState({
+                    ...this.state,
+                    message: 'Ouch: email is required',
+                    email: ""
+                })
+            )
+        } else if (this.state.email === "foo@bar.baz") {
+            return (
+                this.setState({
+                    ...this.state,
+                    message: 'foo@bar.baz failure #71',
+                    email: ""
+                })
+            )
         } else {
             return (
                 this.setState({
                     message: 'Ouch: email must be a valid email',
+                    email: ""
                 })
             )
         }
@@ -269,7 +292,7 @@ export default class AppClass extends React.Component {
             x: 2,
             y: 2,
             message: "",
-            email: "lady@gaga.com"
+            email: ""
         })
     }
 
@@ -307,7 +330,13 @@ export default class AppClass extends React.Component {
                     <button onClick={this.reset} id="reset">reset</button>
                 </div>
                 <form onSubmit={this.handleSubmit}>
-                    <input id="email" type="email" placeholder="type email"></input>
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="type email"
+                        value={this.state.email}
+                        onChange={this.handleChanges}>
+                    </input>
                     <input id="submit" type="submit"></input>
                 </form>
             </div>
